@@ -1,8 +1,8 @@
-import MessageForm from 'components/MessageForm'
-import MessagesList from 'components/MessageList'
+import MessageForm from '../page/ssportai/components/MessageForm'
+import MessagesList from '../page/ssportai/components/MessageList'
 import { NextPage } from 'next'
-import { MessagesProvider } from 'utils/useMessages'
-import Layout from '../components/Layout'
+import { MessagesProvider } from '../page/ssportai/utils/useMessages'
+import Layout from '../page/ssportai/components/Layout'
 
 const IndexPage: NextPage = () => {
   return (
