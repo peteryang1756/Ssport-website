@@ -68,9 +68,7 @@ export function MessagesProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-<ChatsContext.Provider>
-      {children}
-    </ChatsContext.Provider>
+
   )
 }
 
