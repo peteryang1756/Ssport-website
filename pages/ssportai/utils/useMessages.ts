@@ -68,7 +68,7 @@ export function MessagesProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <ChatsContext.Provider value={{ messages, addMessage, isLoadingAnswer }}>
+<ChatsContext.Provider value={{ messages, addMessage, isLoadingAnswer }}>
       {children}
     </ChatsContext.Provider>
   )
