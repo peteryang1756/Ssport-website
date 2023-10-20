@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Script from 'next/script';
 function footer() {
   return (
 <footer className="bg-gray-50 dark:bg-gray-800">
@@ -11,19 +11,42 @@ function footer() {
         </h2>
         <ul className="text-gray-500 dark:text-gray-400">
           <li className="mb-4">
-            <Link href="/blog" className="hover:underline">
+            <Link href="/blog" className="hover:underline" passHref={true}>
               部落格
             </Link>
           </li>
           <li className="mb-4">
-            <Link href="c" className="hover:underline">
+            <Link href="contact" className="hover:underline" passHref={true}>
              聯繫
             </Link>
            </li>
           <li className="mb-4">
-            <a href="https://help.ssangyongsports.org/" className="hover:underline">
-             狀態
-            </a>
+               <a id="footer-badge" href="https://status.ssangyongsports.org">
+        狀態載入中
+      </a>
+
+       <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            function updateFooterBadge(status) {
+              const badge = document.getElementById('footer-badge');
+              badge.textContent = status === 'UP' ? '系統運行' : '狀態異常';
+              badge.className = status.toLowerCase();
+            }
+
+            fetch('https://status.ssangyongsports.org/summary.json')
+              .then(response => response.json())
+              .then(data => {
+                const status = data.page.status;
+                updateFooterBadge(status);
+                badge.href = data.page.url;
+              })
+              .catch(error => {
+                console.error('無法讀取系統狀態', error);
+              });
+          `,
+        }}
+      ></script>
            </li>
         </ul>
       </div>
@@ -33,9 +56,9 @@ function footer() {
         </h2>
         <ul className="text-gray-500 dark:text-gray-400">
           <li className="mb-4">
-            <a href="https://help.ssangyongsports.org/" className="hover:underline">
+            <Link href="/support" className="hover:underline">
              幫助中心
-            </a>
+            </Link>
           </li>
           <li className="mb-4">
             <a href="https://help.ssangyongsports.org/" className="hover:underline">
@@ -48,7 +71,7 @@ function footer() {
             </a>
           </li>
           <li className="mb-4">
-            <Link href="c" className="hover:underline">
+            <Link href="contact" className="hover:underline" passHref={true}>
               聯繫
             </Link>
           </li>
@@ -60,14 +83,14 @@ function footer() {
         </h2>
         <ul className="text-gray-500 dark:text-gray-400">
           <li className="mb-4">
-            <Link href="/p" className="hover:underline">
+            <Link href="/p" passHref={true}>
               隱私政策
             </Link>
           </li>
           <li className="mb-4">
-            <a href="/t" className="hover:underline">
+            <Link href="/t" className="hover:underline">
               服務條款
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -77,7 +100,7 @@ function footer() {
         </h2>
         <ul className="text-gray-500 dark:text-gray-400">
           <li className="mb-4">
-            <Link href="/tv" className=" hover:underline">
+            <Link href="/tv" className=" hover:underline" passHref={true}>
               官網
             </Link>
           </li>
@@ -99,12 +122,12 @@ function footer() {
         </h2>
         <ul className="text-gray-500 dark:text-gray-400">
           <li className="mb-4">
-            <a href="#" className="hover:underline">
+            <a href="https://slb.ssangyongsports.org/" className="hover:underline">
               雙龍職棒
             </a>
           </li>
           <li className="mb-4">
-            <a href="#" className="hover:underline">
+            <a href="https://sba.ssangyongsports.org/" className="hover:underline">
               雙龍職籃
             </a>
           </li>
@@ -123,17 +146,18 @@ function footer() {
         className="flex justify-center items-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
       >
         <img
-  src="https://i.imgur.com/JhurYW7.jpg"
+  src="/footer.png"
   width={186}
   height={46}
+  alt="雙龍體育Logo"
 />
 </Link>
       <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
-        © 2021-2022{" "}
+      Copyright © 2023 
         <a href="#" className="hover:underline">
-          雙龍體育
+          雙龍體育,
         </a>
-        . All Rights Reserved.
+      維護團隊：雙龍體育
       </span>
       <ul className="flex justify-center mt-5 space-x-5">
         <li>

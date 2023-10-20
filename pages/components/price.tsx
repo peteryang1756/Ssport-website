@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from './Button.module.css';
 
 function price() {
   return (
@@ -6,7 +7,8 @@ function price() {
   <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-        選擇適合你的價格
+        選擇適合你的
+        <span className={styles.abc}>價格</span>
       </h2>
       <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
        這裡提供了價格給你參考
@@ -89,12 +91,12 @@ function price() {
           </li>
           
         </ul>
-        <a
-          href="#"
+        <Link
+          href="/c"
           className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900"
         >
-          Get started
-        </a>
+          聯繫我們
+        </Link>
       </div>
             </div>
     </div>

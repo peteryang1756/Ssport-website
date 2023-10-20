@@ -1,24 +1,4 @@
-<a href="https://status.ssangyongsports.org" target="_blank" id="footer-badge"></a>
 
-<style>
-#footer-badge {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-#footer-badge.up {
-  color: #000000;
-}
-
-#footer-badge.down {
-  background-color: #F44336;
-  color: #FFF;
-}
-</style>
 
 <script>
 // 定義一個函數來更新Footer badge的內容和樣式

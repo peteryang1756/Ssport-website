@@ -1,0 +1,22 @@
+name: Submit Sitemap to Google Search Console
+
+on:
+  push:
+    branches:
+      - main # 或者你的主要分支名稱
+
+jobs:
+  submit-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Submit sitemap to Google Search Console
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        SITEMAP_URL: https://ssangyongsports.org/sitemap.xml # 替換為你的網站的sitemap URL
+      run: |
+        curl -X POST "https://searchconsole.googleapis.com/v1/urlNotifications:publish?key=$GOOGLE_API_KEY" \
+          -H "Content-Type: application/json" \
+          -d "{\"url\": \"$SITEMAP_URL\", \"type\": \"URL_UPDATED\"}"

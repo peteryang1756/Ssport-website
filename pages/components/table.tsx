@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image'
+import styles from './Button.module.css';
 
 function table() {
   return (
@@ -16,14 +17,15 @@ function table() {
       alt="雙龍職棒"
     />
     <div className="mt-4 md:mt-0">
-      <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-        雙龍職棒
+      <h2 className={`mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white `}>
+        雙龍
+                    <span className={styles.abc}>職棒</span>
       </h2>
       <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
        棒球，（英語：Baseball、日韓稱為野球），為一種團體球類運動，由人數最少為9人的两支队伍在一個扇形的球場进行攻擊與守備。棒球球員分為攻...
       </p>
       <a
-        href="#"
+        href="https://slb.ssangyongsports.org/"
         className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
       >
         更多資訊

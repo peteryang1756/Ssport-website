@@ -1,8 +1,11 @@
 ---
 title: "SBA和SLB網域被刪除公告"
+seo: "在2023年3/6這天雙龍體育旗下的sba,slb域名皆被無預警的情況下被刪除，我們團隊也在得知消息後馬上聯繫freenom,但他們沒給出一個回覆"
 author: "Peter yang"
+info: "雙龍體育CEO"
+img: "/1D7F9E91-14B0-4914-9FBD-0E46CE340A78.png"
 category: "公告"
-date: "2022-03-13"
+date: "2023-03-19"
 bannerImage: "/blog.jpg"
 tags:
     - 公告

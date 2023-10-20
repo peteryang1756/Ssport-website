@@ -1,18 +1,22 @@
 import Hero from './components/Hero';
 import Table from './components/table';
 import Tabl from './components/tabl';
+import Sport from './components/sport';
 import React from 'react';
-import { NextSeo } from 'next-seo';
+import Head from 'next/head'
 
 const Home = () => {
   return (
     <>
-      <NextSeo
-        title="雙龍體育"
-        description="籃球，為一種由兩隊參與，在一個長方形籃球場進行的球類運動。每隊出場5名隊員，可將球向任何方向傳、投、拍、滾或運...."
-      />
+<Head>
+        <title>雙龍體育</title>
+        <meta name="description" content="雙龍體育網站 - 專業體育賽事！ 提供最新的雙龍體育資訊、TV、運動比賽報導，讓您輕鬆了解雙龍體育。歡迎加入雙龍運動論壇，一起與大家溝通！" />
+      </Head>
+
       <div>
         <Hero />
+        <Sport />
+        <div id="anchor_one" />
         <Table />
         <Tabl />
       </div>

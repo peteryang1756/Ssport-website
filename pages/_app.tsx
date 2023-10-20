@@ -2,16 +2,25 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from './components/head'
 import Footer from './components/footer'
-import News from './components/news'
+import { SessionProvider } from 'next-auth/react'
+import Script from 'next/script';
+export default function App({
+  Component, 
+  pageProps: { session, ...pageProps },
+}: AppProps) {
 
-export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div>
-    <Head />
-<Component {...pageProps} />
-          <News />
-    <Footer />
-  </div>
+    <SessionProvider session={session}>
+        <div>
+  <Script src="/chat.js" />
+        <Head />
+    
+      <Component {...pageProps} />
+    
+            <Footer />
+        </div>
+    </SessionProvider>
 
-  );
+  )
+
 }
